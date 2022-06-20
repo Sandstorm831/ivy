@@ -506,8 +506,11 @@
 <span class="sd">        last two dimensions and appending a dimension equal to the size of the resulting</span>
 <span class="sd">        diagonals. The returned array must have the same data type as ``x``.</span>
 
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Functional Examples</span>
+<span class="sd">    ------------------</span>
+
+<span class="sd">    With :code:`ivy.Array` inputs:</span>
+<span class="sd">    </span>
 <span class="sd">    &gt;&gt;&gt; x = ivy.array([[1., 2.],\</span>
 <span class="sd">                       [3., 4.]])</span>
 <span class="sd">    &gt;&gt;&gt; d = ivy.diagonal(x)</span>
@@ -518,11 +521,6 @@
 <span class="sd">    &gt;&gt;&gt; print(d)</span>
 <span class="sd">    ivy.array([1.])</span>
 
-<span class="sd">    Functional Examples</span>
-<span class="sd">    ------------------</span>
-<span class="sd">    </span>
-<span class="sd">    With :code:`ivy.Array` inputs:</span>
-<span class="sd">    </span>
 <span class="sd">    &gt;&gt;&gt; x = ivy.array([[[1., 2.],\</span>
 <span class="sd">                        [3., 4.]],\</span>
 <span class="sd">                       [[5., 6.],\</span>
