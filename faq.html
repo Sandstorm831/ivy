@@ -21,7 +21,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="functional/ivy.html" />
+    <link rel="next" title="Glossary" href="glossary.html" />
     <link rel="prev" title="Open Tasks" href="contributing/4_open_tasks.html" /> 
 </head>
 
@@ -64,6 +64,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#state">State</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Functions</span></p>
 <ul>
@@ -97,14 +98,14 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Framework Classes</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="stateful/converters.html">Converters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="stateful/sequential.html">Sequential</a></li>
 <li class="toctree-l1"><a class="reference internal" href="stateful/initializers.html">Initializers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="stateful/layers.html">Layers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="stateful/norms.html">Norms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stateful/converters.html">Converters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="stateful/optimizers.html">Optimizers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="stateful/module.html">Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stateful/layers.html">Layers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stateful/norms.html">Norms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="stateful/activations.html">Activations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stateful/sequential.html">Sequential</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Docs</span></p>
 <ul>
@@ -133,7 +134,8 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-            <li class="wy-breadcrumbs-aside">
+      <li>FAQ</li>
+      <li class="wy-breadcrumbs-aside">
             <a href="_sources/faq.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
@@ -167,9 +169,9 @@ which everything else in the framework depends.
 Our CI always tests against the latest version available on PyPI,
 and this has been the case since we started development.
 We do not lock-in any versions during our continuous testing,
-and we will contunue to always pull the latest version.</p>
+and we will continue to always pull the latest version.</p>
 <p>In future, we hope to add explicit testing also for previous versions,
-so we can guaranteed backward compatibility for each backend.
+so we can guarantee backward compatibility for each backend.
 We will also add an option to select backend versions for the small minority of cases
 where changes in the backend functional APIs do cause breaking changes for Ivy.</p>
 </section>
@@ -217,7 +219,7 @@ which limits the kinds of algorithms that can run effectively.</p>
 <p>TensorFlow eager and PyTorch allow you to use full python control flow, (loops, branches, function calls,
 dynamic dispatch, recursion) but there is no static computation graph. How will Ivy handle dynamic control flow?
 Will Ivy parse python ASTs?</p>
-<p><strong>A:</strong> For now, Ivy will not support dynamic control flow by parsing ASTs. The dynamicism of <code class="code docutils literal notranslate"><span class="pre">for</span></code> loops and
+<p><strong>A:</strong> For now, Ivy will not support dynamic control flow by parsing ASTs. The dynamism of <code class="code docutils literal notranslate"><span class="pre">for</span></code> loops and
 <code class="code docutils literal notranslate"><span class="pre">while</span></code> loops will be ignored during compilation, and just the static trace which chains the array operations
 performed during the forward pass at compile time will be preserved.</p>
 <p>However, Ivy will support the compilation of looping and branching methods such as <code class="code docutils literal notranslate"><span class="pre">lax.scan</span></code>, <code class="code docutils literal notranslate"><span class="pre">lax.while</span></code>,
@@ -314,13 +316,13 @@ everything explicitly in a functional manner.</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="contributing/4_open_tasks.html" class="btn btn-neutral float-left" title="Open Tasks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="functional/ivy.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="glossary.html" class="btn btn-neutral float-right" title="Glossary" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020, Ivy Team.</p>
+    <p>&#169; Copyright 2020-2022, Ivy Team.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

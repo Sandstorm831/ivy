@@ -73,6 +73,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Functions</span></p>
 <ul>
@@ -106,14 +107,14 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Framework Classes</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../stateful/converters.html">Converters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../stateful/sequential.html">Sequential</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../stateful/initializers.html">Initializers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../stateful/layers.html">Layers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../stateful/norms.html">Norms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stateful/converters.html">Converters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../stateful/optimizers.html">Optimizers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../stateful/module.html">Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stateful/layers.html">Layers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stateful/norms.html">Norms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../stateful/activations.html">Activations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stateful/sequential.html">Sequential</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Docs</span></p>
 <ul>
@@ -308,27 +309,27 @@ function in the backend supporting inplace updates directly.
 and so the <code class="code docutils literal notranslate"><span class="pre">out</span></code> argument should <strong>not</strong> be included in these backend-specific <code class="code docutils literal notranslate"><span class="pre">tan</span></code> implementations.</p>
 <p>The implementations of <code class="code docutils literal notranslate"><span class="pre">ivy.tan</span></code> for each backend are as follows.</p>
 <p><strong>JAX</strong> (no <code class="code docutils literal notranslate"><span class="pre">out</span></code> argument):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tan</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">JaxArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">JaxArray</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tan</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">JaxArray</span><span class="p">,</span> <span class="o">/</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">JaxArray</span><span class="p">:</span>
     <span class="k">return</span> <span class="n">jnp</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>MXNet</strong> (no <code class="code docutils literal notranslate"><span class="pre">out</span></code> argument):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tan</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">mx</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">mx</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tan</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">mx</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span> <span class="o">/</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">mx</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
     <span class="k">return</span> <span class="n">mx</span><span class="o">.</span><span class="n">nd</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>NumPy</strong> (includes <code class="code docutils literal notranslate"><span class="pre">out</span></code> argument):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tan</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tan</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>TensorFlow</strong> (no <code class="code docutils literal notranslate"><span class="pre">out</span></code> argument):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tan</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tensor</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tan</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Tensor</span><span class="p">,</span> <span class="o">/</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tensor</span><span class="p">:</span>
     <span class="k">return</span> <span class="n">tf</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>PyTorch</strong> (includes <code class="code docutils literal notranslate"><span class="pre">out</span></code> argument):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tan</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tan</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
     <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -359,9 +360,10 @@ using inplace updates in as many of the inner Ivy functions as possible.</p></li
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cross_entropy</span><span class="p">(</span>
     <span class="n">true</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">],</span>
     <span class="n">pred</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">],</span>
+    <span class="o">/</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
     <span class="n">axis</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
     <span class="n">epsilon</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1e-7</span><span class="p">,</span>
-    <span class="o">*</span><span class="p">,</span>
     <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
     <span class="n">pred</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">epsilon</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">epsilon</span><span class="p">)</span>
@@ -396,6 +398,30 @@ like <a class="reference external" href="https://github.com/unifyai/ivy/blob/204
 <a class="reference external" href="https://github.com/unifyai/ivy/blob/2045db570d7977830681a7498a3c1045fb5bcc79/ivy/func_wrapper.py#L361">handle_out_argument</a>
 wrapping, but we opt to implement this in the compositional function itself,
 due to point 1 mentioned above.</p>
+<p><strong>Mixed Functions</strong></p>
+<p>As explained in the <a class="reference internal" href="1_function_types.html#function-types"><span class="std std-ref">Function Types</span></a> section, <em>mixed</em> functions can effectively
+behave as either compositional or primary functions, depending on the backend
+that is selected.</p>
+<p>Unlike <em>compositional</em> arguments, where the <code class="code docutils literal notranslate"><span class="pre">handle_out_argument</span></code> decorator is not
+included, this decorator <em>should</em> be included for <em>mixed</em> functions. This decorator is
+needed in order to ensure the <code class="code docutils literal notranslate"><span class="pre">out</span></code> argument is handled correctly when the backend
+<em>does</em> include a backend-specific implementation, which itself may or may not handle the
+<code class="code docutils literal notranslate"><span class="pre">out</span></code> argument explicitly. In such cases, the <em>mixed</em> function behaves like a
+<em>primary</em> function. If the backend-specific implementation does not handle the
+<code class="code docutils literal notranslate"><span class="pre">out</span></code> argument explicitly (there is no attribute <code class="code docutils literal notranslate"><span class="pre">support_native_out</span></code>
+specified on the backend function), then it will need to be handled <a class="reference external" href="https://github.com/unifyai/ivy/blob/588618fe04de21f79d68a8f6cbb48ab3402c6905/ivy/func_wrapper.py#L287">in the decorator</a>.</p>
+<p>However, the inclusion of this decorator means that in cases where the <em>mixed</em> function
+is called compositionally (there is no backend implementation), then the <code class="code docutils literal notranslate"><span class="pre">out</span></code>
+argument will also be handled <a class="reference external" href="https://github.com/unifyai/ivy/blob/588618fe04de21f79d68a8f6cbb48ab3402c6905/ivy/func_wrapper.py#L287">in the decorator</a>, this time because of the lack of the
+<code class="code docutils literal notranslate"><span class="pre">support_native_out</span></code> attribute found on the compositional implementation. But this
+is not ideal. All compositional implementations are fully capable of handling the
+<code class="code docutils literal notranslate"><span class="pre">out</span></code> argument explicitly, and so handling it <a class="reference external" href="https://github.com/unifyai/ivy/blob/588618fe04de21f79d68a8f6cbb48ab3402c6905/ivy/func_wrapper.py#L287">in the decorator</a> will likely be
+less efficient, and prevent us from leveraging backend-specific in-place optimizations
+where they might exist when calling the individual Ivy functions of the compositional
+implementation.</p>
+<p>Therefore, we always add the <code class="code docutils literal notranslate"><span class="pre">support_native_out</span></code> attribute to <em>mixed</em> functions,
+to ensure that the <code class="code docutils literal notranslate"><span class="pre">out</span></code> argument is always handled directly by the compositional
+implementation, rather than being handled <a class="reference external" href="https://github.com/unifyai/ivy/blob/588618fe04de21f79d68a8f6cbb48ab3402c6905/ivy/func_wrapper.py#L287">in the decorator</a>.</p>
 </section>
 <section id="copy-argument">
 <h2>copy argument<a class="headerlink" href="#copy-argument" title="Permalink to this heading"></a></h2>
@@ -404,8 +430,8 @@ The functions with support for the <code class="code docutils literal notranslat
 and the standard mandates the inclusion of <code class="code docutils literal notranslate"><span class="pre">copy</span></code> in each case.
 These functions are:
 <a class="reference external" href="https://github.com/unifyai/ivy/blob/633eb420c5006a0a17c238bfa794cf5b6add8598/ivy/functional/ivy/manipulation.py#L418">ivy.reshape</a> (<a class="reference external" href="https://github.com/data-apis/array-api/blob/5ba86db7ff5f9ddd9e956808c3659b1fc7f714cc/spec/API_specification/array_api/manipulation_functions.py#L106">in the standard</a>),
-<a class="reference external" href="https://github.com/unifyai/ivy/blob/633eb420c5006a0a17c238bfa794cf5b6add8598/ivy/functional/ivy/data_type.py#L164">ivy.astype</a> (<a class="reference external" href="https://github.com/data-apis/array-api/blob/5ba86db7ff5f9ddd9e956808c3659b1fc7f714cc/spec/API_specification/array_api/data_type_functions.py#L3">in the standard</a>)
-and <a class="reference external" href="https://github.com/unifyai/ivy/blob/633eb420c5006a0a17c238bfa794cf5b6add8598/ivy/functional/ivy/creation.py#L64">ivy.asarray</a> (<a class="reference external" href="https://github.com/data-apis/array-api/blob/5ba86db7ff5f9ddd9e956808c3659b1fc7f714cc/spec/API_specification/array_api/creation_functions.py#L31">in the standard</a>).</p>
+<a class="reference external" href="https://github.com/unifyai/ivy/blob/8482eb3fcadd0721f339a1a55c3f3b9f5c86d8ba/ivy/functional/ivy/data_type.py#L46">ivy.astype</a> (<a class="reference external" href="https://github.com/data-apis/array-api/blob/5ba86db7ff5f9ddd9e956808c3659b1fc7f714cc/spec/API_specification/array_api/data_type_functions.py#L3">in the standard</a>)
+and <a class="reference external" href="https://github.com/unifyai/ivy/blob/8482eb3fcadd0721f339a1a55c3f3b9f5c86d8ba/ivy/functional/ivy/creation.py#L114">ivy.asarray</a> (<a class="reference external" href="https://github.com/data-apis/array-api/blob/5ba86db7ff5f9ddd9e956808c3659b1fc7f714cc/spec/API_specification/array_api/creation_functions.py#L31">in the standard</a>).</p>
 <p>The <code class="code docutils literal notranslate"><span class="pre">copy</span></code> argument dictates whether a new copy should be created,
 or whether the input array should be updated inplace.
 When <code class="code docutils literal notranslate"><span class="pre">copy</span></code> is not specified explicitly, then an inplace update is performed
@@ -433,7 +459,7 @@ or reach out on <a class="reference external" href="https://discord.gg/ZVQdvbzNQ
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020, Ivy Team.</p>
+    <p>&#169; Copyright 2020-2022, Ivy Team.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
