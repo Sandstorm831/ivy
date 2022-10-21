@@ -68,7 +68,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../cholesky.html">cholesky</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cross.html">cross</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../det.html">det</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../diag.html">diag</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../diagonal.html">diagonal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eigh.html">eigh</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eigvalsh.html">eigvalsh</a></li>
@@ -96,8 +95,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../trace.html">trace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../vecdot.html">vecdot</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../vector_norm.html">vector_norm</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../vector_to_skew_symmetric_matrix.html">vector_to_skew_symmetric_matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../diag.html">diag</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../vander.html">vander</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vector_to_skew_symmetric_matrix.html">vector_to_skew_symmetric_matrix</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../losses.html">Losses</a></li>
@@ -114,19 +114,19 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Data Classes</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../data_classes/array.html">Array</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../data_classes/container.html">Container</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../data_classes/array.html">Array</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Framework Classes</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../stateful/converters.html">Converters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../stateful/norms.html">Norms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../stateful/optimizers.html">Optimizers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../stateful/initializers.html">Initializers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../stateful/sequential.html">Sequential</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../stateful/activations.html">Activations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../stateful/module.html">Module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../stateful/optimizers.html">Optimizers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../stateful/norms.html">Norms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../stateful/layers.html">Layers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../stateful/initializers.html">Initializers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../stateful/module.html">Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../stateful/converters.html">Converters</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Docs</span></p>
 <ul>
@@ -200,23 +200,27 @@ must have shape <code class="docutils literal notranslate"><span class="pre">(..
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>x = ivy.Container(a= ivy.array([[1., 2.],              [3., 4.]]))
+<p>x = ivy.Container(a= ivy.array([[1., 2.],
+…                             [3., 4.]]))
 y = pinv(x, None, None)
 print(y)
 {</p>
 <blockquote>
-<div><p>a: ivy.array([[-2., 1.],           [1.5, -0.5]])</p>
+<div><p>a: ivy.array([[-2., 1.],</p>
 </div></blockquote>
-<p>}</p>
-<p>x = ivy.Container(a=ivy.array([[1., 2.],              [3., 4.]]))
+<p>…               [1.5, -0.5]])
+}</p>
+<p>x = ivy.Container(a=ivy.array([[1., 2.],
+…                            [3., 4.]]))
 out = ivy.Container(a=ivy.array())
 pinv(x, 0, out)
 print(out)
 {</p>
 <blockquote>
-<div><p>a: ivy.array([[0.0426, 0.0964],           [0.0605, 0.1368]])</p>
+<div><p>a: ivy.array([[0.0426, 0.0964],</p>
 </div></blockquote>
-<p>}</p>
+<p>…               [0.0605, 0.1368]])
+}</p>
 </dd></dl>
 
 <div class="line-block">

@@ -76,19 +76,19 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Data Classes</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../data_classes/array.html">Array</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../data_classes/container.html">Container</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../data_classes/array.html">Array</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Framework Classes</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../stateful/converters.html">Converters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../stateful/norms.html">Norms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../stateful/optimizers.html">Optimizers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../stateful/initializers.html">Initializers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../stateful/sequential.html">Sequential</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../stateful/activations.html">Activations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../stateful/module.html">Module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../stateful/optimizers.html">Optimizers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../stateful/norms.html">Norms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../stateful/layers.html">Layers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../stateful/initializers.html">Initializers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../stateful/module.html">Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../stateful/converters.html">Converters</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Docs</span></p>
 <ul>
@@ -158,34 +158,35 @@
     <span class="n">keepdims</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Calculates the minimum value of the input array x.</span>
+    <span class="sd">&quot;&quot;&quot;Calculates the minimum value of the input array ``x``.</span>
 
 <span class="sd">    .. note::</span>
-<span class="sd">    When the number of elements over which to compute the minimum value is zero, the</span>
-<span class="sd">    minimum value is implementation-defined. Specification-compliant libraries may</span>
-<span class="sd">    choose to raise an error, return a sentinel value (e.g., if x is a floating-point</span>
-<span class="sd">    input array, return NaN), or return the maximum possible value for the input array x</span>
-<span class="sd">    data type (e.g., if x is a floating-point array, return +infinity).</span>
+<span class="sd">       When the number of elements over which to compute the minimum value is zero, the</span>
+<span class="sd">       minimum value is implementation-defined. Specification-compliant libraries may</span>
+<span class="sd">       choose to raise an error, return a sentinel value (e.g., if ``x`` is a floating-point</span>
+<span class="sd">       input array, return ``NaN``), or return the maximum possible value for the input array ``x``</span>
+<span class="sd">       data type (e.g., if ``x`` is a floating-point array, return ``+infinity``).</span>
 
 <span class="sd">    **Special Cases**</span>
 
 <span class="sd">    For floating-point operands,</span>
 
-<span class="sd">    If x_i is NaN, the minimum value is NaN (i.e., NaN values propagate).</span>
+<span class="sd">    -   If ``x_i`` is ``NaN``, the minimum value is ``NaN`` (i.e., ``NaN`` values propagate).</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    x</span>
-<span class="sd">        Input array containing elements to min.</span>
+<span class="sd">        Input array. Should have a real-valued data type.</span>
 <span class="sd">    axis</span>
-<span class="sd">         axis or axes along which minimum values must be computed. By default, the</span>
-<span class="sd">         minimum value must be computed over the entire array. If a tuple of integers,</span>
-<span class="sd">         minimum values must be computed over multiple axes. Default: None.</span>
+<span class="sd">        axis or axes along which minimum values must be computed. By default, the</span>
+<span class="sd">        minimum value must be computed over the entire array. If a tuple of integers,</span>
+<span class="sd">        minimum values must be computed over multiple axes. Default: ``None``.</span>
+
 <span class="sd">    keepdims</span>
-<span class="sd">        optional boolean, if True, the reduced axes (dimensions) must be included in the</span>
+<span class="sd">        optional boolean, if ``True``, the reduced axes (dimensions) must be included in the</span>
 <span class="sd">        result as singleton dimensions, and, accordingly, the result must be compatible</span>
-<span class="sd">        with the input array (see Broadcasting). Otherwise, if False, the reduced axes</span>
-<span class="sd">        (dimensions) must not be included in the result. Default: False.</span>
+<span class="sd">        with the input array (see :ref:`broadcasting`). Otherwise, if ``False``, the reduced axes</span>
+<span class="sd">        (dimensions) must not be included in the result. Default: ``False``.</span>
 <span class="sd">    out</span>
 <span class="sd">        optional output array, for writing the result to.</span>
 
@@ -195,10 +196,10 @@
 <span class="sd">        if the minimum value was computed over the entire array, a zero-dimensional</span>
 <span class="sd">        array containing the minimum value; otherwise, a non-zero-dimensional array</span>
 <span class="sd">        containing the minimum values. The returned array must have the same data type</span>
-<span class="sd">        as x.</span>
+<span class="sd">        as ``x``.</span>
 
 
-<span class="sd">    This method conforms to the `Array API Standard</span>
+<span class="sd">    This function conforms to the `Array API Standard</span>
 <span class="sd">    &lt;https://data-apis.org/array-api/latest/&gt;`_. This docstring is an extension of the</span>
 <span class="sd">    `docstring &lt;https://data-apis.org/array-api/latest/API_specification/generated/signatures.statistical_functions.min.html&gt;`_  </span>
 <span class="sd">    in the standard.</span>
@@ -352,8 +353,8 @@
 <span class="sd">        b: ivy.array(5.)</span>
 <span class="sd">    }</span>
 
-<span class="sd">    &gt;&gt;&gt; x = ivy.Container(a=ivy.array([1, 2, 3]),\</span>
-<span class="sd">                          b=ivy.array([2, 3, 4]))</span>
+<span class="sd">    &gt;&gt;&gt; x = ivy.Container(a=ivy.array([1, 2, 3]),</span>
+<span class="sd">    ...                   b=ivy.array([2, 3, 4]))</span>
 <span class="sd">    &gt;&gt;&gt; z = x.max()</span>
 <span class="sd">    &gt;&gt;&gt; print(z)</span>
 <span class="sd">    {</span>
@@ -427,7 +428,7 @@
 <span class="sd">    simplicity, but this function is *nestable*, and therefore also accepts</span>
 <span class="sd">    :class:`ivy.Container` instances in place of any of the arguments.</span>
 
-<span class="sd">    </span>
+
 <span class="sd">    Functional Examples</span>
 <span class="sd">    -------------------</span>
 <span class="sd">    With :class:`ivy.Array` input:</span>
@@ -478,8 +479,8 @@
 <span class="sd">        b: ivy.array(0.90000004)</span>
 <span class="sd">    }</span>
 
-<span class="sd">    &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[0., 1., 2.], [3., 4., 5.]]), \</span>
-<span class="sd">                          b=ivy.array([[3., 4., 5.], [6., 7., 8.]]))</span>
+<span class="sd">    &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[0., 1., 2.], [3., 4., 5.]]),</span>
+<span class="sd">    ...                   b=ivy.array([[3., 4., 5.], [6., 7., 8.]]))</span>
 <span class="sd">    &gt;&gt;&gt; ivy.mean(x, axis=0, out=x)</span>
 <span class="sd">    &gt;&gt;&gt; print(x)</span>
 <span class="sd">    {</span>
@@ -526,8 +527,8 @@
 <span class="sd">        b: ivy.array(0.)</span>
 <span class="sd">    }</span>
 
-<span class="sd">    &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[1., 1., 1.], [2., 2., 2.]]), \</span>
-<span class="sd">                          b=ivy.array([[3., 3., 3.], [4., 4., 4.]]))</span>
+<span class="sd">    &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[1., 1., 1.], [2., 2., 2.]]),</span>
+<span class="sd">    ...                   b=ivy.array([[3., 3., 3.], [4., 4., 4.]]))</span>
 <span class="sd">    &gt;&gt;&gt; x.mean(axis=1, out=x)</span>
 <span class="sd">    &gt;&gt;&gt; print(x)</span>
 <span class="sd">    {</span>
@@ -560,12 +561,12 @@
 <span class="sd">    axis</span>
 <span class="sd">        axis or axes along which products must be computed. By default, the product must</span>
 <span class="sd">        be computed over the entire array. If a tuple of integers, products must be</span>
-<span class="sd">        computed over multiple axes. Default: None.</span>
+<span class="sd">        computed over multiple axes. Default: ``None``.</span>
 <span class="sd">    keepdims</span>
 <span class="sd">        bool, if True, the reduced axes (dimensions) must be included in the result as</span>
 <span class="sd">        singleton dimensions, and, accordingly, the result must be compatible with the</span>
 <span class="sd">        input array (see Broadcasting). Otherwise, if False, the reduced axes</span>
-<span class="sd">        (dimensions) must not be included in the result. Default: False.</span>
+<span class="sd">        (dimensions) must not be included in the result. Default: ``False``.</span>
 <span class="sd">    dtype</span>
 <span class="sd">        data type of the returned array. If None,</span>
 <span class="sd">        if the default data type corresponding to the data type “kind” (integer or</span>
@@ -580,7 +581,7 @@
 <span class="sd">        integer data type (e.g., if the default integer data type is int32, the returned</span>
 <span class="sd">        array must have a uint32 data type). If the data type (either specified or</span>
 <span class="sd">        resolved) differs from the data type of x, the input array should be cast to the</span>
-<span class="sd">        specified data type before computing the product. Default: None.</span>
+<span class="sd">        specified data type before computing the product. Default: ``None``.</span>
 <span class="sd">    out</span>
 <span class="sd">        optional output array, for writing the result to.</span>
 
@@ -637,29 +638,26 @@
 
 <span class="sd">    Let ``N`` equal the number of elements over which to compute the standard deviation.</span>
 
-<span class="sd">    -   If ``N`` is ``0``, the standard deviation is ``0`` (i.e., the empty standard</span>
-<span class="sd">        deviation).</span>
-<span class="sd">    -   If ``x_i`` is ``NaN``, the standard deviation is ``NaN`` (i.e., ``NaN`` values</span>
-<span class="sd">        propagate).</span>
+<span class="sd">    -   If ``N - correction`` is less than or equal to ``0``, the standard deviation is ``NaN``.</span>
+<span class="sd">    -   If ``x_i`` is ``NaN``, the standard deviation is ``NaN`` (i.e., ``NaN`` values propagate).</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    x</span>
-<span class="sd">        input array. Should have a floating-point data type</span>
-
+<span class="sd">        input array. Should have a real-valued floating-point data type.</span>
 <span class="sd">    axis</span>
 <span class="sd">        axis or axes along which standard deviations must be computed. By default, the</span>
 <span class="sd">        standard deviation must be computed over the entire array. If a tuple of</span>
 <span class="sd">        integers, standard deviations must be computed over multiple axes.</span>
-<span class="sd">        Default: None.</span>
+<span class="sd">        Default: ``None``.</span>
 <span class="sd">    correction</span>
-<span class="sd">        degrees of freedom adjustment. Setting this parameter to a value other than 0</span>
+<span class="sd">        degrees of freedom adjustment. Setting this parameter to a value other than ``0``</span>
 <span class="sd">        has the effect of adjusting the divisor during the calculation of the standard</span>
-<span class="sd">        deviation according to N-c where N corresponds to the total number of elements</span>
-<span class="sd">        over which the standard deviation is computed and c corresponds to the provided</span>
-<span class="sd">        degrees of freedom adjustment. When computing the standard deviation of a</span>
-<span class="sd">        population, setting this parameter to ``0`` is the standard choice (i.e., the</span>
-<span class="sd">        provided array contains data constituting an entire population). When computing</span>
+<span class="sd">        deviation according to ``N-c`` where ``N`` corresponds to the total number of</span>
+<span class="sd">        elements over which the standard deviation is computed and ``c`` corresponds to</span>
+<span class="sd">        the provided degrees of freedom adjustment. When computing the standard deviation</span>
+<span class="sd">        of a population, setting this parameter to ``0`` is the standard choice (i.e.,</span>
+<span class="sd">        the provided array contains data constituting an entire population). When computing</span>
 <span class="sd">        the corrected sample standard deviation, setting this parameter to ``1`` is the</span>
 <span class="sd">        standard choice (i.e., the provided array contains data sampled from a larger</span>
 <span class="sd">        population; this is commonly referred to as Bessel&#39;s correction).</span>
@@ -667,7 +665,7 @@
 <span class="sd">    keepdims</span>
 <span class="sd">        if ``True``, the reduced axes (dimensions) must be included in the result as</span>
 <span class="sd">        singleton dimensions, and, accordingly, the result must be compatible with the</span>
-<span class="sd">        input array (see Broadcasting). Otherwise, if ``False``, the reduced axes</span>
+<span class="sd">        input array (see :ref:`broadcasting`). Otherwise, if ``False``, the reduced axes</span>
 <span class="sd">        (dimensions) must not be included in the result. Default: ``False``.</span>
 <span class="sd">    out</span>
 <span class="sd">        optional output array, for writing the result to.</span>
@@ -675,13 +673,20 @@
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    ret</span>
-<span class="sd">        if the sum was computed over the entire array, a zero-dimensional array</span>
-<span class="sd">        containing the standard deviation; otherwise, an array containing the standard</span>
-<span class="sd">        deviations. The returned array must have a data type as described by the</span>
-<span class="sd">        ``dtype`` parameter above.</span>
+<span class="sd">        if the standard deviation was computed over the entire array, a zero-dimensional</span>
+<span class="sd">        array containing the standard deviation; otherwise, a non-zero-dimensional array</span>
+<span class="sd">        containing the standard deviations. The returned array must have the same data</span>
+<span class="sd">        type as ``x``.</span>
 
+<span class="sd">        .. note::</span>
+<span class="sd">           While this specification recommends that this function only accept input</span>
+<span class="sd">           arrays having a real-valued floating-point data type, specification-compliant</span>
+<span class="sd">           array libraries may choose to accept input arrays having an integer data type.</span>
+<span class="sd">           While mixed data type promotion is implementation-defined, if the input array</span>
+<span class="sd">           ``x`` has an integer data type, the returned array must have the default</span>
+<span class="sd">           real-valued floating-point data type.</span>
 
-<span class="sd">    This method conforms to the `Array API Standard</span>
+<span class="sd">    This function conforms to the `Array API Standard</span>
 <span class="sd">    &lt;https://data-apis.org/array-api/latest/&gt;`_. This docstring is an extension of the</span>
 <span class="sd">    `docstring &lt;https://data-apis.org/array-api/latest/API_specification/generated/signatures.statistical_functions.std.html&gt;`_  </span>
 <span class="sd">    in the standard.</span>
@@ -865,7 +870,7 @@
 <span class="sd">    axis</span>
 <span class="sd">        axis or axes along which variances must be computed. By default, the variance</span>
 <span class="sd">        must be computed over the entire array. If a tuple of integers, variances must</span>
-<span class="sd">        be computed over multiple axes. Default: None.</span>
+<span class="sd">        be computed over multiple axes. Default: ``None``.</span>
 <span class="sd">    correction</span>
 <span class="sd">        degrees of freedom adjustment. Setting this parameter to a value other than 0</span>
 <span class="sd">        has the effect of adjusting the divisor during the calculation of the variance</span>
@@ -876,12 +881,12 @@
 <span class="sd">        an entire population). When computing the unbiased sample variance, setting this</span>
 <span class="sd">        parameter to 1 is the standard choice (i.e., the provided array contains data</span>
 <span class="sd">        sampled from a larger population; this is commonly referred to as Bessel&#39;s</span>
-<span class="sd">        correction). Default: 0.</span>
+<span class="sd">        correction). Default: ``0``.</span>
 <span class="sd">    keepdims</span>
 <span class="sd">        if True, the reduced axes (dimensions) must be included in the result as</span>
 <span class="sd">        singleton dimensions, and, accordingly, the result must be compatible with the</span>
 <span class="sd">        input array (see Broadcasting). Otherwise, if False, the reduced axes</span>
-<span class="sd">        (dimensions) must not be included in the result. Default: False.</span>
+<span class="sd">        (dimensions) must not be included in the result. Default: ``False``.</span>
 <span class="sd">    out</span>
 <span class="sd">        optional output array, for writing the result to.</span>
 
@@ -931,8 +936,8 @@
 
 <span class="sd">    With :class:`ivy.Container` input:</span>
 
-<span class="sd">    &gt;&gt;&gt; x = ivy.Container(a=ivy.array([0.1, 0.2, 0.9]), \</span>
-<span class="sd">                          b=ivy.array([0.7, 0.1, 0.9]))</span>
+<span class="sd">    &gt;&gt;&gt; x = ivy.Container(a=ivy.array([0.1, 0.2, 0.9]),</span>
+<span class="sd">    ...                   b=ivy.array([0.7, 0.1, 0.9]))</span>
 <span class="sd">    &gt;&gt;&gt; y = ivy.var(x)</span>
 <span class="sd">    &gt;&gt;&gt; print(y)</span>
 <span class="sd">    {</span>
@@ -1031,7 +1036,7 @@
 <span class="sd">        Whether to perform cumsum exclusively. Default is ``False``.</span>
 <span class="sd">    reverse</span>
 <span class="sd">        Whether to perform the cumsum from last to first element in the selected</span>
-<span class="sd">        axis. Default is False (from first to last element)</span>
+<span class="sd">        axis. Default is ``False`` (from first to last element)</span>
 <span class="sd">    dtype</span>
 <span class="sd">        Data type of the returned array. Default is ``None``.</span>
 <span class="sd">        If None, if the default data type corresponding to the data type “kind”</span>
@@ -1069,24 +1074,24 @@
 <span class="sd">    &gt;&gt;&gt; print(y)</span>
 <span class="sd">    ivy.array([0, 1, 6, 8])</span>
 
-<span class="sd">    &gt;&gt;&gt; x = ivy.array([[6, 4, 2], \</span>
-<span class="sd">                       [1, 3, 0]])</span>
+<span class="sd">    &gt;&gt;&gt; x = ivy.array([[6, 4, 2],</span>
+<span class="sd">    ...                [1, 3, 0]])</span>
 <span class="sd">    &gt;&gt;&gt; y = ivy.zeros((2,3))</span>
 <span class="sd">    &gt;&gt;&gt; ivy.cumsum(x, axis=0, exclusive=False, reverse=True, out=y)</span>
 <span class="sd">    &gt;&gt;&gt; print(y)</span>
 <span class="sd">    ivy.array([[7, 7, 2],</span>
 <span class="sd">               [1, 3, 0]])</span>
 
-<span class="sd">    &gt;&gt;&gt; x = ivy.array([[1, 5, 2], \</span>
-<span class="sd">                       [4, 3, 0]])</span>
+<span class="sd">    &gt;&gt;&gt; x = ivy.array([[1, 5, 2],</span>
+<span class="sd">    ...                [4, 3, 0]])</span>
 <span class="sd">    &gt;&gt;&gt; y = ivy.cumsum(x, axis=0, exclusive=True, reverse=True)</span>
 <span class="sd">    &gt;&gt;&gt; print(y)</span>
 <span class="sd">    ivy.array([[4, 3, 0],</span>
 <span class="sd">               [0, 0, 0]])</span>
 
-<span class="sd">    &gt;&gt;&gt; x = ivy.array([[2, 4, 5], \</span>
-<span class="sd">                       [3, 6, 5], \</span>
-<span class="sd">                       [1, 3, 10]])</span>
+<span class="sd">    &gt;&gt;&gt; x = ivy.array([[2, 4, 5],</span>
+<span class="sd">    ...                [3, 6, 5],</span>
+<span class="sd">    ...                [1, 3, 10]])</span>
 <span class="sd">    &gt;&gt;&gt; ivy.cumsum(x,axis=1,reverse=True, dtype=&#39;int64&#39;, out=x)</span>
 <span class="sd">    &gt;&gt;&gt; print(x)</span>
 <span class="sd">    ivy.array([[11,  9,  5],</span>
@@ -1095,8 +1100,8 @@
 
 <span class="sd">    With :class:`ivy.Container` input:</span>
 
-<span class="sd">    &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[1, 3, 5]]), \</span>
-<span class="sd">                          b=ivy.array([[3, 5, 7]]))</span>
+<span class="sd">    &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[1, 3, 5]]),</span>
+<span class="sd">    ...                   b=ivy.array([[3, 5, 7]]))</span>
 <span class="sd">    &gt;&gt;&gt; y = ivy.cumsum(x, axis= 0)</span>
 <span class="sd">    &gt;&gt;&gt; print(y)</span>
 <span class="sd">    {</span>
@@ -1104,15 +1109,15 @@
 <span class="sd">        b: ivy.array([[3, 5, 7]])</span>
 <span class="sd">    }</span>
 
-<span class="sd">    &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[1, 3, 4]]), \</span>
-<span class="sd">                          b=ivy.array([[3, 5, 8], \</span>
-<span class="sd">                                       [5, 6, 5]]), \</span>
-<span class="sd">                          c=ivy.array([[2, 4, 1], \</span>
-<span class="sd">                                       [3, 6, 9], \</span>
-<span class="sd">                                       [0, 2, 3]]))</span>
-<span class="sd">    &gt;&gt;&gt; y = ivy.Container(a = ivy.zeros((1, 3)), \</span>
-<span class="sd">                          b = ivy.zeros((2, 3)), \</span>
-<span class="sd">                          c = ivy.zeros((3,3)))</span>
+<span class="sd">    &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[1, 3, 4]]),</span>
+<span class="sd">    ...                   b=ivy.array([[3, 5, 8],</span>
+<span class="sd">    ...                                [5, 6, 5]]),</span>
+<span class="sd">    ...                   c=ivy.array([[2, 4, 1],</span>
+<span class="sd">    ...                                [3, 6, 9],</span>
+<span class="sd">    ...                                [0, 2, 3]]))</span>
+<span class="sd">    &gt;&gt;&gt; y = ivy.Container(a = ivy.zeros((1, 3)),</span>
+<span class="sd">    ...                   b = ivy.zeros((2, 3)),</span>
+<span class="sd">    ...                   c = ivy.zeros((3,3)))</span>
 <span class="sd">    &gt;&gt;&gt; ivy.cumsum(x,axis=1,reverse=True, out=y)</span>
 <span class="sd">    &gt;&gt;&gt; print(y)</span>
 <span class="sd">    {</span>
@@ -1124,13 +1129,13 @@
 <span class="sd">                      [5, 5, 3]])</span>
 <span class="sd">    }</span>
 
-<span class="sd">    &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[0], \</span>
-<span class="sd">                                       [5]]), \</span>
-<span class="sd">                          b=ivy.array([[6, 8, 7], \</span>
-<span class="sd">                                       [4, 2, 3]]), \</span>
-<span class="sd">                          c=ivy.array([[1, 2], \</span>
-<span class="sd">                                       [3, 4], \</span>
-<span class="sd">                                       [6, 4]]))</span>
+<span class="sd">    &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[0],</span>
+<span class="sd">    ...                                [5]]),</span>
+<span class="sd">    ...                   b=ivy.array([[6, 8, 7],</span>
+<span class="sd">    ...                                [4, 2, 3]]),</span>
+<span class="sd">    ...                   c=ivy.array([[1, 2],</span>
+<span class="sd">    ...                                [3, 4],</span>
+<span class="sd">    ...                                [6, 4]]))</span>
 <span class="sd">    &gt;&gt;&gt; ivy.cumsum(x,axis=0,out=x)</span>
 <span class="sd">    &gt;&gt;&gt; print(x)</span>
 <span class="sd">    {</span>
@@ -1171,7 +1176,7 @@
 <span class="sd">        optional bool, Whether to perform the cumprod exclusively. Defaults is False.</span>
 <span class="sd">    reverse</span>
 <span class="sd">        Whether to perform the cumprod from last to first element in the selected</span>
-<span class="sd">        axis. Default is False (from first to last element)</span>
+<span class="sd">        axis. Default is ``False`` (from first to last element)</span>
 <span class="sd">    dtype</span>
 <span class="sd">        data type of the returned array. If None,</span>
 <span class="sd">        if the default data type corresponding to the data type “kind” (integer or</span>
@@ -1186,7 +1191,7 @@
 <span class="sd">        integer data type (e.g., if the default integer data type is int32, the returned</span>
 <span class="sd">        array must have a uint32 data type). If the data type (either specified or</span>
 <span class="sd">        resolved) differs from the data type of x, the input array should be cast to the</span>
-<span class="sd">        specified data type before computing the product. Default: None.</span>
+<span class="sd">        specified data type before computing the product. Default: ``None``.</span>
 <span class="sd">    out</span>
 <span class="sd">        optional output array, for writing the result to. It must have a shape that the</span>
 <span class="sd">        inputs broadcast to.</span>
@@ -1334,19 +1339,19 @@
 <span class="sd">    ivy.array([ 9, 12, 15])</span>
 
 <span class="sd">    &gt;&gt;&gt; A = ivy.array([0, 1, 2])</span>
-<span class="sd">    &gt;&gt;&gt; B = ivy.array([[ 0,  1,  2,  3],\</span>
-<span class="sd">                       [ 4,  5,  6,  7],\</span>
-<span class="sd">                       [ 8,  9, 10, 11]])</span>
+<span class="sd">    &gt;&gt;&gt; B = ivy.array([[ 0,  1,  2,  3],</span>
+<span class="sd">    ...                [ 4,  5,  6,  7],</span>
+<span class="sd">    ...                [ 8,  9, 10, 11]])</span>
 <span class="sd">    &gt;&gt;&gt; C = ivy.einsum(&#39;i,ij-&gt;i&#39;, A, B)</span>
 <span class="sd">    &gt;&gt;&gt; print(C)</span>
 <span class="sd">    ivy.array([ 0, 22, 76])</span>
 
-<span class="sd">    &gt;&gt;&gt; A = ivy.array([[1, 1, 1],\</span>
-<span class="sd">                       [2, 2, 2],\</span>
-<span class="sd">                       [5, 5, 5]])</span>
-<span class="sd">    &gt;&gt;&gt; B = ivy.array([[0, 1, 0],\</span>
-<span class="sd">                       [1, 1, 0],\</span>
-<span class="sd">                       [1, 1, 1]])</span>
+<span class="sd">    &gt;&gt;&gt; A = ivy.array([[1, 1, 1],</span>
+<span class="sd">    ...                [2, 2, 2],</span>
+<span class="sd">    ...                [5, 5, 5]])</span>
+<span class="sd">    &gt;&gt;&gt; B = ivy.array([[0, 1, 0],</span>
+<span class="sd">    ...                [1, 1, 0],</span>
+<span class="sd">    ...                [1, 1, 1]])</span>
 <span class="sd">    &gt;&gt;&gt; C = ivy.einsum(&#39;ij,jk-&gt;ik&#39;, A, B)</span>
 <span class="sd">    &gt;&gt;&gt; print(C)</span>
 <span class="sd">    ivy.array([[ 2,  3,  1],</span>
@@ -1396,9 +1401,9 @@
 <span class="sd">    With a mix of :class:`ivy.Array` and :class:`ivy.NativeArray` inputs:</span>
 
 <span class="sd">    &gt;&gt;&gt; A = ivy.array([0, 1, 2])</span>
-<span class="sd">    &gt;&gt;&gt; B = ivy.native_array([[ 0, 1, 2, 3],\</span>
-<span class="sd">                              [ 4, 5, 6, 7],\</span>
-<span class="sd">                              [ 8, 9, 10, 11]])</span>
+<span class="sd">    &gt;&gt;&gt; B = ivy.native_array([[ 0, 1, 2, 3],</span>
+<span class="sd">    ...                       [ 4, 5, 6, 7],</span>
+<span class="sd">    ...                       [ 8, 9, 10, 11]])</span>
 <span class="sd">    &gt;&gt;&gt; C = ivy.einsum(&#39;i,ij-&gt;i&#39;, A, B)</span>
 <span class="sd">    &gt;&gt;&gt; print(C)</span>
 <span class="sd">    ivy.array([ 0, 22, 76])</span>
@@ -1406,12 +1411,12 @@
 <span class="sd">    With a mix of :class:`ivy.Array` and :class:`ivy.Container` inputs:</span>
 
 <span class="sd">    &gt;&gt;&gt; x = ivy.array([0, 1, 2])</span>
-<span class="sd">    &gt;&gt;&gt; y = ivy.Container(a=ivy.array([[ 0,  1,  2,  3],\</span>
-<span class="sd">                                       [ 4,  5,  6,  7],\</span>
-<span class="sd">                                       [ 8,  9, 10, 11]]),\</span>
-<span class="sd">                          b=ivy.array([[ 0,  1,  2],\</span>
-<span class="sd">                                       [ 4,  5,  6],\</span>
-<span class="sd">                                       [ 8,  9, 10]]))</span>
+<span class="sd">    &gt;&gt;&gt; y = ivy.Container(a=ivy.array([[ 0,  1,  2,  3],</span>
+<span class="sd">    ...                                [ 4,  5,  6,  7],</span>
+<span class="sd">    ...                                [ 8,  9, 10, 11]]),</span>
+<span class="sd">    ...                   b=ivy.array([[ 0,  1,  2],</span>
+<span class="sd">    ...                                [ 4,  5,  6],</span>
+<span class="sd">    ...                                [ 8,  9, 10]]))</span>
 <span class="sd">    &gt;&gt;&gt; z = ivy.einsum(&#39;i,ij-&gt;i&#39;, x, y)</span>
 <span class="sd">    &gt;&gt;&gt; print(z)</span>
 <span class="sd">    {</span>
@@ -1421,8 +1426,8 @@
 
 <span class="sd">    With :class:`ivy.Container` input:</span>
 
-<span class="sd">    &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[0, 1, 0],[1, 1, 0],[1, 1, 1]]),\</span>
-<span class="sd">                          b=ivy.array([[0, 1, 2],[4, 5, 6],[8, 9, 10]]))</span>
+<span class="sd">    &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[0, 1, 0],[1, 1, 0],[1, 1, 1]]),</span>
+<span class="sd">    ...                   b=ivy.array([[0, 1, 2],[4, 5, 6],[8, 9, 10]]))</span>
 <span class="sd">    &gt;&gt;&gt; y = ivy.einsum(&#39;ii&#39;, x)</span>
 <span class="sd">    &gt;&gt;&gt; print(y)</span>
 <span class="sd">    {</span>
@@ -1442,8 +1447,8 @@
 
 <span class="sd">    Using :class:`ivy.Container` instance method:</span>
 
-<span class="sd">    &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[0, 1, 0],[1, 1, 0],[1, 1, 1]]),\</span>
-<span class="sd">                          b=ivy.array([[0, 1, 2],[4, 5, 6],[8, 9, 10]]))</span>
+<span class="sd">    &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[0, 1, 0],[1, 1, 0],[1, 1, 1]]),</span>
+<span class="sd">    ...                   b=ivy.array([[0, 1, 2],[4, 5, 6],[8, 9, 10]]))</span>
 <span class="sd">    &gt;&gt;&gt; y = x.einsum(&#39;ii&#39;)</span>
 <span class="sd">    &gt;&gt;&gt; print(y)</span>
 <span class="sd">    {</span>

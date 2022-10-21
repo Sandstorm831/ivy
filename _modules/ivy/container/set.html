@@ -76,19 +76,19 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Data Classes</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../data_classes/array.html">Array</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../data_classes/container.html">Container</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../data_classes/array.html">Array</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Framework Classes</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../stateful/converters.html">Converters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stateful/norms.html">Norms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stateful/optimizers.html">Optimizers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stateful/initializers.html">Initializers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../stateful/sequential.html">Sequential</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../stateful/activations.html">Activations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../stateful/module.html">Module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../stateful/optimizers.html">Optimizers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../stateful/norms.html">Norms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../stateful/layers.html">Layers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../stateful/initializers.html">Initializers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stateful/module.html">Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stateful/converters.html">Converters</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Docs</span></p>
 <ul>
@@ -184,8 +184,8 @@
         <span class="n">map_sequences</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        ivy.Container static method variant of ivy.unique_counts. This method simply </span>
-<span class="sd">        wraps the function, and so the docstring for ivy.unique_counts also applies </span>
+<span class="sd">        ivy.Container static method variant of ivy.unique_counts. This method simply</span>
+<span class="sd">        wraps the function, and so the docstring for ivy.unique_counts also applies</span>
 <span class="sd">        to this method with minimal changes.</span>
 
 <span class="sd">        Parameters</span>
@@ -194,15 +194,16 @@
 <span class="sd">            input container. If ``x`` has more than one dimension, the function must</span>
 <span class="sd">            flatten ``x`` and return the unique elements of the flattened array.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is True.</span>
+<span class="sd">            will be skipped. Default is ``True``.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is False.</span>
+<span class="sd">            Default is ``False``.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
+<span class="sd">            Default is ``False``.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -219,8 +220,8 @@
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([0., 1., 3. , 2. , 1. , 0.]), \</span>
-<span class="sd">                              b=ivy.array([1,2,1,3,4,1,3]))</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([0., 1., 3. , 2. , 1. , 0.]),</span>
+<span class="sd">        ...                   b=ivy.array([1,2,1,3,4,1,3]))</span>
 <span class="sd">        &gt;&gt;&gt; y = ivy.static_unique_counts(x)</span>
 <span class="sd">        &gt;&gt;&gt; print(y)</span>
 <span class="sd">        {</span>
@@ -257,15 +258,16 @@
 <span class="sd">            input container. If ``x`` has more than one dimension, the function must</span>
 <span class="sd">            flatten ``x`` and return the unique elements of the flattened array.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is True.</span>
+<span class="sd">            will be skipped. Default is ``True``.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is False.</span>
+<span class="sd">            Default is ``False``.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
+<span class="sd">            Default is ``False``.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -284,8 +286,8 @@
 <span class="sd">        --------</span>
 <span class="sd">        With :class:`ivy.Container` instance method:</span>
 
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([0., 1., 3. , 2. , 1. , 0.]), \</span>
-<span class="sd">                              b=ivy.array([1,2,1,3,4,1,3]))</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([0., 1., 3. , 2. , 1. , 0.]),</span>
+<span class="sd">        ...                   b=ivy.array([1,2,1,3,4,1,3]))</span>
 <span class="sd">        &gt;&gt;&gt; y = x.unique_counts()</span>
 <span class="sd">        &gt;&gt;&gt; print(y)</span>
 <span class="sd">        {</span>
@@ -380,15 +382,16 @@
 <span class="sd">             input container. If ``x`` has more than one dimension, the function must</span>
 <span class="sd">             flatten ``x`` and return the unique elements of the flattened array.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">             The key-chains to apply or not apply the method to. Default is None.</span>
+<span class="sd">             The key-chains to apply or not apply the method to. Default is ``None``.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">             If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">             will be skipped. Default is True.</span>
+<span class="sd">             will be skipped. Default is ``True``.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">             Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">             Default is False.</span>
+<span class="sd">             Default is ``False``.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">             Whether to also map method to sequences (lists, tuples). Default is False.</span>
+<span class="sd">             Whether to also map method to sequences (lists, tuples).</span>
+<span class="sd">            Default is ``False``.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -406,8 +409,8 @@
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([4.,8.,3.,5.,9.,4.]),\</span>
-<span class="sd">                              b=ivy.array([7,6,4,5,6,3,2]))</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([4.,8.,3.,5.,9.,4.]),</span>
+<span class="sd">        ...                   b=ivy.array([7,6,4,5,6,3,2]))</span>
 <span class="sd">        &gt;&gt;&gt; y = x.unique_inverse()</span>
 <span class="sd">        &gt;&gt;&gt; print(y)</span>
 <span class="sd">             {</span>

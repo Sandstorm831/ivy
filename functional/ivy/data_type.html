@@ -118,19 +118,19 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Data Classes</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../data_classes/array.html">Array</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../data_classes/container.html">Container</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_classes/array.html">Array</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Framework Classes</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../stateful/converters.html">Converters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../stateful/norms.html">Norms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../stateful/optimizers.html">Optimizers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../stateful/initializers.html">Initializers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../stateful/sequential.html">Sequential</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../stateful/activations.html">Activations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../stateful/module.html">Module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../stateful/optimizers.html">Optimizers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../stateful/norms.html">Norms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../stateful/layers.html">Layers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../stateful/initializers.html">Initializers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../stateful/module.html">Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../stateful/converters.html">Converters</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Docs</span></p>
 <ul>
@@ -238,10 +238,10 @@
 <dd><p>Convert data type string representation to native data type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>dtype_in</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DType</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – The data type string to convert to native data type.</p>
+<dd class="field-odd"><p><strong>dtype_in</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeDtype</span></code>]) – The data type string to convert to native data type.</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DType</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</p>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">NativeDtype</span></code></p>
 </dd>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>ret</em> – data type e.g. ivy.float32.</p>
@@ -264,8 +264,8 @@ to a numeric value equal to <code class="docutils literal notranslate"><span cla
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<a class="reference internal" href="../../data_classes/array/array/Array.html#ivy.array.array.Array" title="ivy.array.array.Array"><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></a>    ) – array to cast.</p></li>
-<li><p><strong>dtype</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DType</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – desired data type.</p></li>
+<li><p><strong>x</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<a class="reference internal" href="../../data_classes/array/array/Array.html#ivy.array.array.Array" title="ivy.array.array.Array"><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>]) – array to cast.</p></li>
+<li><p><strong>dtype</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeDtype</span></code>]) – desired data type.</p></li>
 <li><p><strong>copy</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – specifies whether to copy an array when the specified <code class="docutils literal notranslate"><span class="pre">dtype</span></code> matches (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>)
 the data type of the input array <code class="docutils literal notranslate"><span class="pre">x</span></code>. If <code class="docutils literal notranslate"><span class="pre">True</span></code>, a newly allocated
 array must always be returned. If <code class="docutils literal notranslate"><span class="pre">False</span></code> and the specified <code class="docutils literal notranslate"><span class="pre">dtype</span></code>
@@ -327,7 +327,8 @@ the same shape as <code class="docutils literal notranslate"><span class="pre">x
 </pre></div>
 </div>
 <p>Using <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Container</span></code> instance method:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="kc">False</span><span class="p">,</span><span class="kc">True</span><span class="p">,</span><span class="kc">True</span><span class="p">]),</span>        <span class="n">b</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">3.14</span><span class="p">,</span> <span class="mf">2.718</span><span class="p">,</span> <span class="mf">1.618</span><span class="p">]))</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="kc">False</span><span class="p">,</span><span class="kc">True</span><span class="p">,</span><span class="kc">True</span><span class="p">]),</span>
+<span class="gp">... </span>                  <span class="n">b</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">3.14</span><span class="p">,</span> <span class="mf">2.718</span><span class="p">,</span> <span class="mf">1.618</span><span class="p">]))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">int32</span><span class="p">))</span>
 <span class="go">{</span>
 <span class="go">    a: ivy.array([0, 1, 1]),</span>
@@ -343,7 +344,7 @@ the same shape as <code class="docutils literal notranslate"><span class="pre">x
 <dd><p>Broadcasts one or more arrays against one another.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>arrays</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<a class="reference internal" href="../../data_classes/array/array/Array.html#ivy.array.array.Array" title="ivy.array.array.Array"><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></a>    ) – an arbitrary number of arrays to-be broadcasted.
+<dd class="field-odd"><p><strong>arrays</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<a class="reference internal" href="../../data_classes/array/array/Array.html#ivy.array.array.Array" title="ivy.array.array.Array"><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>]) – an arbitrary number of arrays to-be broadcasted.
 Each array must have the same shape. Each array must have the same dtype as its
 corresponding input array.</p>
 </dd>
@@ -416,7 +417,7 @@ corresponding input array.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<a class="reference internal" href="../../data_classes/array/array/Array.html#ivy.array.array.Array" title="ivy.array.array.Array"><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></a>    ) – array to broadcast.</p></li>
+<li><p><strong>x</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<a class="reference internal" href="../../data_classes/array/array/Array.html#ivy.array.array.Array" title="ivy.array.array.Array"><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>]) – array to broadcast.</p></li>
 <li><p><strong>shape</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">...</span></code>]) – array shape. Must be compatible with x (see Broadcasting). If
 the array is incompatible with the specified shape, the function
 should raise an exception.</p></li>
@@ -451,7 +452,8 @@ shape that the inputs broadcast to.</p></li>
 </pre></div>
 </div>
 <p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Container</span></code> input:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]),</span>        <span class="n">b</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]))</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]),</span>
+<span class="gp">... </span>                  <span class="n">b</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">broadcast_to</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 <span class="go">{</span>
@@ -513,13 +515,16 @@ otherwise, <code class="docutils literal notranslate"><span class="pre">False</s
 </pre></div>
 </div>
 <p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.NativeArray</span></code> input:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">native_array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>                              <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span>                            <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int16&#39;</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">native_array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+<span class="gp">... </span>                      <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span>
+<span class="gp">... </span>                      <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int16&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">can_cast</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;uint8&#39;</span><span class="p">))</span>
 <span class="go">False</span>
 </pre></div>
 </div>
 <p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Container</span></code> input:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">]),</span>                          <span class="n">b</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]))</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">]),</span>
+<span class="gp">... </span>                  <span class="n">b</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">can_cast</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;int64&#39;</span><span class="p">))</span>
 <span class="go">{</span>
 <span class="go">    a: false,</span>
@@ -535,10 +540,13 @@ otherwise, <code class="docutils literal notranslate"><span class="pre">False</s
 <dd><p>Helper function to check if the input is a float or a float-like object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>x</strong> (<em>any</em>) – Input to check.</p>
+<dd class="field-odd"><p><strong>x</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>) – Input to check.</p>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>ret</strong> (<em>bool</em>) – “True” if the input is a float or a float-like object, otherwise “False”.</p>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>ret</em> – “True” if the input is a float or a float-like object, otherwise “False”.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -559,33 +567,21 @@ otherwise, <code class="docutils literal notranslate"><span class="pre">False</s
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Dtype</span></code> input:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">xType</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">float16</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">yType</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">closest_valid_dtype</span><span class="p">(</span><span class="n">xType</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">yType</span><span class="p">)</span>
-<span class="go">float16</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">xType</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">int8</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">yType</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">closest_valid_dtype</span><span class="p">(</span><span class="n">xType</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">yType</span><span class="p">)</span>
-<span class="go">int8</span>
-</pre></div>
-</div>
-<p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.NativeDtype</span></code> inputs:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">xType</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">native_uint16</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">yType</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">closest_valid_dtype</span><span class="p">(</span><span class="n">xType</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">yType</span><span class="p">)</span>
-<span class="go">&lt;dtype:&#39;uint16&#39;&gt;</span>
-</pre></div>
-</div>
-<p>With <code class="code docutils literal notranslate"><span class="pre">str</span></code> input:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">xType</span> <span class="o">=</span> <span class="s1">&#39;int32&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">yType</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">closest_valid_dtype</span><span class="p">(</span><span class="n">xType</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">yType</span><span class="p">)</span>
-<span class="go">int32</span>
-</pre></div>
-</div>
+<p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Dtype</span></code> input:
+&gt;&gt;&gt; xType = ivy.float16
+&gt;&gt;&gt; yType = ivy.closest_valid_dtype(xType)
+&gt;&gt;&gt; print(yType)
+float16</p>
+<p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.NativeDtype</span></code> inputs:
+&gt;&gt;&gt; xType = ivy.native_uint16
+&gt;&gt;&gt; yType = ivy.closest_valid_dtype(xType)
+&gt;&gt;&gt; print(yType)
+&lt;dtype:’uint16’&gt;</p>
+<p>With <code class="code docutils literal notranslate"><span class="pre">str</span></code> input:
+&gt;&gt;&gt; xType = ‘int32’
+&gt;&gt;&gt; yType = ivy.closest_valid_dtype(xType)
+&gt;&gt;&gt; print(yType)
+int32</p>
 </dd></dl>
 
 <dl class="py function">
@@ -601,7 +597,7 @@ otherwise, <code class="docutils literal notranslate"><span class="pre">False</s
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DType</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</p>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeDtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</p>
 </dd>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>Return the input dtype if provided, otherwise return the global default dtype.</em></p>
@@ -617,12 +613,12 @@ otherwise, <code class="docutils literal notranslate"><span class="pre">False</s
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>input</strong> – (Default value = None)</p></li>
-<li><p><strong>float_dtype</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">FloatDtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DType</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]) – (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
+<li><p><strong>float_dtype</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">FloatDtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeDtype</span></code>]]) – (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
 <li><p><strong>as_native</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>]) – (Default value = None) (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DType</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code>]</p>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeDtype</span></code>]</p>
 </dd>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><ul class="simple">
@@ -641,12 +637,12 @@ otherwise, <code class="docutils literal notranslate"><span class="pre">False</s
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>input</strong> – (Default value = None) Number or array for inferring default int dtype.</p></li>
-<li><p><strong>int_dtype</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">IntDtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DType</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]) – (Default value = None) Uint dtype to be returned as default. (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
+<li><p><strong>int_dtype</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">IntDtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeDtype</span></code>]]) – (Default value = None) Uint dtype to be returned as default. (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
 <li><p><strong>as_native</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – (Default value = None) Whether to return the default int dtype as native dtype. (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">IntDtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DType</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</p>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">IntDtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeDtype</span></code>]</p>
 </dd>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><ul class="simple">
@@ -686,12 +682,12 @@ given, returns uint dtype according to input, else uint32 by default.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>input</strong> – Number or array for inferring default uint dtype. Optional.</p></li>
-<li><p><strong>uint_dtype</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">UintDtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DType</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]) – Uint dtype to be returned as defualt. Optional. (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
+<li><p><strong>uint_dtype</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">UintDtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeDtype</span></code>]]) – Uint dtype to be returned as defualt. Optional. (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
 <li><p><strong>as_native</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>]) – Whether to return the default uint dtype as native dtype. Optional. (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">UintDtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DType</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</p>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">UintDtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeDtype</span></code>]</p>
 </dd>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><ul class="simple">
@@ -729,12 +725,12 @@ given, returns uint dtype according to input, else uint32 by default.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<a class="reference internal" href="../../data_classes/array/array/Array.html#ivy.array.array.Array" title="ivy.array.array.Array"><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></a>    ) – Tensor for which to get the data type.</p></li>
-<li><p><strong>as_native</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Whether or not to return the dtype in string format. Default is False. (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p></li>
+<li><p><strong>x</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<a class="reference internal" href="../../data_classes/array/array/Array.html#ivy.array.array.Array" title="ivy.array.array.Array"><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>]) – Tensor for which to get the data type.</p></li>
+<li><p><strong>as_native</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Whether or not to return the dtype in string format. Default is <code class="docutils literal notranslate"><span class="pre">False</span></code>. (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DType</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</p>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeDtype</span></code>]</p>
 </dd>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>ret</em> – Data type of the array.</p>
@@ -756,7 +752,8 @@ given, returns uint dtype according to input, else uint32 by default.</p>
 </pre></div>
 </div>
 <p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Container</span></code> inputs:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">native_array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]),</span>                          <span class="n">b</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">native_array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">native_array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]),</span>
+<span class="gp">... </span>                  <span class="n">b</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">native_array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">a</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 <span class="go">float32</span>
@@ -770,7 +767,7 @@ given, returns uint dtype according to input, else uint32 by default.</p>
 <dd><p>Get the number of bits used for representing the input data type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>dtype_in</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DType</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – The data type to determine the number of bits for.</p>
+<dd class="field-odd"><p><strong>dtype_in</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeDtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – The data type to determine the number of bits for.</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
@@ -791,17 +788,7 @@ given, returns uint dtype according to input, else uint32 by default.</p>
 <span class="go">64</span>
 </pre></div>
 </div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">dtype_bits</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">uint16</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="go">16</span>
-</pre></div>
-</div>
 <p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.NativeDtype</span></code> inputs:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">dtype_bits</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">native_int8</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="go">8</span>
-</pre></div>
-</div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">dtype_bits</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">native_bool</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="go">1</span>
@@ -815,7 +802,7 @@ given, returns uint dtype according to input, else uint32 by default.</p>
 <dd><p>Machine limits for floating-point data types.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>type</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <a class="reference internal" href="../../data_classes/array/array/Array.html#ivy.array.array.Array" title="ivy.array.array.Array"><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></a>    ) – the kind of floating-point data-type about which to get information.</p>
+<dd class="field-odd"><p><strong>type</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <a class="reference internal" href="../../data_classes/array/array/Array.html#ivy.array.array.Array" title="ivy.array.array.Array"><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>]) – the kind of floating-point data-type about which to get information.</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
@@ -908,7 +895,7 @@ in the standard.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>fn</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>) – The function to check for the supported dtype attribute</p></li>
-<li><p><strong>recurse</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Whether to recurse into used ivy functions. Default is True. (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>)</p></li>
+<li><p><strong>recurse</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Whether to recurse into used ivy functions. Default is <code class="docutils literal notranslate"><span class="pre">True</span></code>. (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
@@ -933,7 +920,7 @@ in the standard.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>fn</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>) – The function to check for the unsupported dtype attribute</p></li>
-<li><p><strong>recurse</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Whether to recurse into used ivy functions. Default is True. (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>)</p></li>
+<li><p><strong>recurse</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Whether to recurse into used ivy functions. Default is <code class="docutils literal notranslate"><span class="pre">True</span></code>. (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
@@ -957,7 +944,7 @@ in the standard.</p>
 <dd><p>Machine limits for integer data types.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>type</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <a class="reference internal" href="../../data_classes/array/array/Array.html#ivy.array.array.Array" title="ivy.array.array.Array"><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></a>    ) – the kind of integer data-type about which to get information.</p>
+<dd class="field-odd"><p><strong>type</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <a class="reference internal" href="../../data_classes/array/array/Array.html#ivy.array.array.Array" title="ivy.array.array.Array"><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>]) – the kind of integer data-type about which to get information.</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
@@ -987,75 +974,30 @@ in the standard.</p>
 <span class="go">iinfo(min=-2147483648, max=2147483647, dtype=int32)</span>
 </pre></div>
 </div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">iinfo</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">uint64</span><span class="p">)</span>
-<span class="go">iinfo(min=0, max=18446744073709551615, dtype=uint64)</span>
-</pre></div>
-</div>
 <p>With <code class="code docutils literal notranslate"><span class="pre">str</span></code> input:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">iinfo</span><span class="p">(</span><span class="s1">&#39;int32&#39;</span><span class="p">)</span>
 <span class="go">iinfo(min=-2147483648, max=2147483647, dtype=int32)</span>
 </pre></div>
 </div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">iinfo</span><span class="p">(</span><span class="s1">&#39;int64&#39;</span><span class="p">)</span>
-<span class="go">iinfo(min=-9223372036854775808, max=9223372036854775807, dtype=int64)</span>
-</pre></div>
-</div>
 <p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> input:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">13</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">34</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">iinfo</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="go">iinfo(min=-2147483648, max=2147483647, dtype=int32)</span>
-</pre></div>
-</div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">13</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">34</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">int8</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">iinfo</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="go">iinfo(min=-128, max=127, dtype=int8)</span>
 </pre></div>
 </div>
 <p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.NativeArray</span></code> input:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">native_array</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span><span class="mi">84</span><span class="p">,</span><span class="mi">314</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">int16</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">iinfo</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="go">iinfo(min=-32768, max=32767, dtype=int16)</span>
-</pre></div>
-</div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">native_array</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span><span class="mi">84</span><span class="p">,</span><span class="mi">314</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">iinfo</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="go">iinfo(min=-9223372036854775808, max=9223372036854775807, dtype=int64)</span>
 </pre></div>
 </div>
 <p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Container</span></code> input:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">9</span><span class="p">,</span><span class="mi">1800</span><span class="p">,</span><span class="mi">89</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">int16</span><span class="p">),</span>                           <span class="n">y</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">76</span><span class="p">,</span><span class="o">-</span><span class="mi">81</span><span class="p">,</span><span class="mi">16</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">int32</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">iinfo</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
-<span class="go">{</span>
-<span class="go">    x: iinfo(min=-32768, max=32767, dtype=int16),</span>
-<span class="go">    y: iinfo(min=-2147483648, max=2147483647, dtype=int32)</span>
-<span class="go">}</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1800</span><span class="p">,</span><span class="mi">89</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">uint16</span><span class="p">),</span>                           <span class="n">y</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">76</span><span class="p">,</span><span class="mi">81</span><span class="p">,</span><span class="mi">16</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">uint32</span><span class="p">))</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1800</span><span class="p">,</span><span class="mi">89</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">uint16</span><span class="p">),</span>
+<span class="gp">... </span>                  <span class="n">y</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">76</span><span class="p">,</span><span class="mi">81</span><span class="p">,</span><span class="mi">16</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">uint32</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">iinfo</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 <span class="go">{</span>
 <span class="go">    x: iinfo(min=0, max=65535, dtype=uint16),</span>
 <span class="go">    y: iinfo(min=0, max=4294967295, dtype=uint32)</span>
-<span class="go">}</span>
-</pre></div>
-</div>
-<p>Using <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> instance method:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">109</span><span class="p">,</span><span class="mi">8400</span><span class="p">,</span><span class="mi">14</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">iinfo</span><span class="p">()</span>
-<span class="go">iinfo(min=-2147483648, max=2147483647, dtype=int32)</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">119</span><span class="p">,</span><span class="mi">122</span><span class="p">,</span><span class="mi">14</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">int8</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">iinfo</span><span class="p">()</span>
-<span class="go">iinfo(min=-128, max=127, dtype=int8)</span>
-</pre></div>
-</div>
-<p>Using <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Container</span></code> instance method:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">9</span><span class="p">,</span><span class="mi">1800</span><span class="p">,</span><span class="mi">89</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">int16</span><span class="p">),</span>                           <span class="n">y</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">76</span><span class="p">,</span><span class="o">-</span><span class="mi">81</span><span class="p">,</span><span class="mi">16</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">int32</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">iinfo</span><span class="p">()</span>
-<span class="go">{</span>
-<span class="go">    x: iinfo(min=-32768, max=32767, dtype=int16),</span>
-<span class="go">    y: iinfo(min=-2147483648, max=2147483647, dtype=int32)</span>
 <span class="go">}</span>
 </pre></div>
 </div>
@@ -1068,12 +1010,12 @@ in the standard.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dtype</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DType</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – </p></li>
+<li><p><strong>dtype</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeDtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – </p></li>
 <li><p><strong>as_native</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – (Default value = False) (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DType</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</p>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeDtype</span></code>]</p>
 </dd>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>Return the default data type for the “kind” (integer or floating-point) of dtype</em></p>
@@ -1105,7 +1047,7 @@ in the standard.</p>
 the current framework.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>dtype_in</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DType</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]) – The data type for which to check for backend non-support</p>
+<dd class="field-odd"><p><strong>dtype_in</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeDtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]) – The data type for which to check for backend non-support</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
@@ -1139,7 +1081,7 @@ the current framework.</p>
 <dd><p>Determine whether the input data type is a bool data type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>dtype_in</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <a class="reference internal" href="../../data_classes/array/array/Array.html#ivy.array.array.Array" title="ivy.array.array.Array"><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></a>     <code class="xref py py-class docutils literal notranslate"><span class="pre">Number</span></code>]) – input data type to test.</p>
+<dd class="field-odd"><p><strong>dtype_in</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <a class="reference internal" href="../../data_classes/array/array/Array.html#ivy.array.array.Array" title="ivy.array.array.Array"><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Number</span></code>]) – input data type to test.</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
@@ -1162,45 +1104,24 @@ the current framework.</p>
 <dd><p>Determine whether the input data type is a float dtype.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>dtype_in</strong> (<em>Union</em><em>[</em><em>ivy.Dtype</em><em>, </em><em>str</em><em>, </em><em>ivy.Array</em><em>, </em><em>ivy.NativeArray</em><em>, </em><em>Number</em><em>]</em>) – The array or data type to check</p>
+<dd class="field-odd"><p><strong>dtype_in</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <a class="reference internal" href="../../data_classes/array/array/Array.html#ivy.array.array.Array" title="ivy.array.array.Array"><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Number</span></code>]) – The array or data type to check</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
 </dd>
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><strong>ret</strong> (<em>bool</em>) – Whether or not the array or data type is of a floating point dtype</p>
+<dd class="field-odd"><p><em>ret</em> – Whether or not the array or data type is of a floating point dtype</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Dtype</span></code> input:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">is_float_dtype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="go">True</span>
 </pre></div>
 </div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">is_float_dtype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="go">False</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">is_float_dtype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="go">False</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">is_float_dtype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">bool</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="go">False</span>
-</pre></div>
-</div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">arr</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">,</span> <span class="mf">4.3</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">is_float_dtype</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">is_float_dtype</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span>
 <span class="go">True</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">]),</span> <span class="n">b</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">b</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
-<span class="go">float32 int32</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1211,7 +1132,7 @@ the current framework.</p>
 <dd><p>Determine whether the input data type is an int data type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>dtype_in</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <a class="reference internal" href="../../data_classes/array/array/Array.html#ivy.array.array.Array" title="ivy.array.array.Array"><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></a>     <code class="xref py py-class docutils literal notranslate"><span class="pre">Number</span></code>]) – input data type to test.</p>
+<dd class="field-odd"><p><strong>dtype_in</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <a class="reference internal" href="../../data_classes/array/array/Array.html#ivy.array.array.Array" title="ivy.array.array.Array"><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Number</span></code>]) – input data type to test.</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
@@ -1228,60 +1149,33 @@ the current framework.</p>
 </dl>
 <p class="rubric">Examples</p>
 <p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Dtype</span></code> input:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">is_int_dtype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">int8</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="go">True</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">is_int_dtype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="go">True</span>
-</pre></div>
-</div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">is_int_dtype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="go">False</span>
 </pre></div>
 </div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">is_int_dtype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">bool</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="go">False</span>
-</pre></div>
-</div>
-<p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> input:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">dtype</span>
-<span class="go">float32</span>
-</pre></div>
-</div>
+<p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> input:
+&gt;&gt;&gt; x = ivy.array([1., 2., 3.])
+&gt;&gt;&gt; x.dtype
+float32</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">is_int_dtype</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 <span class="go">False</span>
 </pre></div>
 </div>
-<p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.NativeArray</span></code> input:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">native_array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span><span class="n">dtype</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">int16</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">dtype</span>
-<span class="go">torch.int16</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">is_int_dtype</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<span class="go">True</span>
-</pre></div>
-</div>
-<p>With <code class="code docutils literal notranslate"><span class="pre">Number</span></code> input:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">is_int_dtype</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<span class="go">True</span>
-</pre></div>
-</div>
-<p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Container</span></code> input:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">]),</span><span class="n">b</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">dtype</span>
-<span class="go">float32</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">b</span><span class="o">.</span><span class="n">dtype</span>
-<span class="go">int32</span>
-</pre></div>
-</div>
+<p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.NativeArray</span></code> input:
+&gt;&gt;&gt; x = ivy.native_array([[-1, -1, -1], [1, 1, 1]], dtype=ivy.int16)
+&gt;&gt;&gt; print(ivy.is_int_dtype(x))
+True</p>
+<p>With <code class="code docutils literal notranslate"><span class="pre">Number</span></code> input:
+&gt;&gt;&gt; x = 1
+&gt;&gt;&gt; print(ivy.is_int_dtype(x))
+True</p>
+<p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Container</span></code> input:
+&gt;&gt;&gt; x = ivy.Container(a=ivy.array([0., 1., 2.]),b=ivy.array([3, 4, 5]))
+&gt;&gt;&gt; x.a.dtype
+float32
+&gt;&gt;&gt; x.b.dtype
+int32</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">is_int_dtype</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 <span class="go">{</span>
 <span class="go">    a: false,</span>
@@ -1297,7 +1191,7 @@ the current framework.</p>
 <dd><p>Determine whether the input data type is a uint dtype.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>dtype_in</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <a class="reference internal" href="../../data_classes/array/array/Array.html#ivy.array.array.Array" title="ivy.array.array.Array"><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></a>     <code class="xref py py-class docutils literal notranslate"><span class="pre">Number</span></code>]) – The array or data type to check</p>
+<dd class="field-odd"><p><strong>dtype_in</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <a class="reference internal" href="../../data_classes/array/array/Array.html#ivy.array.array.Array" title="ivy.array.array.Array"><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Number</span></code>]) – The array or data type to check</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
@@ -1328,8 +1222,8 @@ the current framework.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>type1</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DType</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – the first of the two types to promote</p></li>
-<li><p><strong>type2</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DType</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – the second of the two types to promote</p></li>
+<li><p><strong>type1</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeDtype</span></code>]) – the first of the two types to promote</p></li>
+<li><p><strong>type2</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeDtype</span></code>]) – the second of the two types to promote</p></li>
 <li><p><strong>array_api_promotion</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – whether to only use the array api promotion rules (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p></li>
 </ul>
 </dd>
@@ -1353,7 +1247,7 @@ as inputs only for those functions that expect an array-like or tensor-like obje
 otherwise it might give unexpected results.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[    , <code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[    ]</p>
+<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1370,7 +1264,7 @@ will be implementation-specific.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>arrays_and_dtypes</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<a class="reference internal" href="../../data_classes/array/array/Array.html#ivy.array.array.Array" title="ivy.array.array.Array"><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></a>     <code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>]) – an arbitrary number of input arrays and/or dtypes.</p>
+<dd class="field-odd"><p><strong>arrays_and_dtypes</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<a class="reference internal" href="../../data_classes/array/array/Array.html#ivy.array.array.Array" title="ivy.array.array.Array"><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>]) – an arbitrary number of input arrays and/or dtypes.</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code></p>
@@ -1419,63 +1313,28 @@ in the standard.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.functional.ivy.data_type.set_default_dtype">
 <span class="sig-prename descclassname">ivy.</span></span><span class="sig-name descname"><span class="pre">set_default_dtype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/data_type.html#set_default_dtype"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.data_type.set_default_dtype" title="Permalink to this definition"></a></dt>
-<dd><p>Sets the datatype dtype as default data type</p>
+<dd><p>Sets the datatype <cite>dtype</cite> as default data type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>dtype</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DType</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – the data_type to set as default data type</p>
+<dd class="field-odd"><p><strong>dtype</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeDtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – the data_type to set as default data type</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Dtype</span></code> input:</p>
+<p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Dtype</span></code> input:
+&gt;&gt;&gt; ivy.set_default_dtype(ivy.bool)
+&gt;&gt;&gt; ivy.default_dtype_stack
+[‘bool’]
+&gt;&gt;&gt; ivy.unset_default_dtype()</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">set_default_dtype</span><span class="p">(</span><span class="s2">&quot;float64&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">default_dtype_stack</span>
-<span class="go">    [&#39;float64&#39;]</span>
+<span class="go">[&#39;float64&#39;]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">unset_default_dtype</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">set_default_dtype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">bool</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">default_dtype_stack</span>
-<span class="go">    [&#39;bool&#39;]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">unset_default_dtype</span><span class="p">()</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">set_default_dtype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">default_dtype_stack</span>
-<span class="go">    [&#39;int32&#39;]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">unset_default_dtype</span><span class="p">()</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">set_default_dtype</span><span class="p">(</span><span class="s1">&#39;uint8&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">default_dtype_stack</span>
-<span class="go">    [&#39;uint8&#39;]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">unset_default_dtype</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.NativeDtype</span></code> input:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">set_default_dtype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">native_int32</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">default_dtype_stack</span>
-<span class="go">    [&#39;int32&#39;]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">unset_default_dtype</span><span class="p">()</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">set_default_dtype</span><span class="p">(</span><span class="s1">&#39;native_bool&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">default_dtype_stack</span>
-<span class="go">    [&#39;native_bool&#39;]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">unset_default_dtype</span><span class="p">()</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">set_default_dtype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">native_uint64</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">default_dtype_stack</span>
-<span class="go">    [&#39;uint64&#39;]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">unset_default_dtype</span><span class="p">()</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">set_default_dtype</span><span class="p">(</span><span class="s1">&#39;native_float64&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">default_dtype_stack</span>
-<span class="go">    [&#39;native_float64&#39;]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">unset_default_dtype</span><span class="p">()</span>
-</pre></div>
-</div>
+<p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.NativeDtype</span></code> input:
+&gt;&gt;&gt; ivy.set_default_dtype(ivy.native_uint64)
+&gt;&gt;&gt; ivy.default_dtype_stack
+[‘uint64’]</p>
 </dd></dl>
 
 <dl class="py function">
@@ -1530,8 +1389,8 @@ data type</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>x1</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<a class="reference internal" href="../../data_classes/array/array/Array.html#ivy.array.array.Array" title="ivy.array.array.Array"><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></a>    ) – the first of the two arrays to type promote</p></li>
-<li><p><strong>x2</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<a class="reference internal" href="../../data_classes/array/array/Array.html#ivy.array.array.Array" title="ivy.array.array.Array"><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></a>    ) – the second of the two arrays to type promote</p></li>
+<li><p><strong>x1</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<a class="reference internal" href="../../data_classes/array/array/Array.html#ivy.array.array.Array" title="ivy.array.array.Array"><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>]) – the first of the two arrays to type promote</p></li>
+<li><p><strong>x2</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<a class="reference internal" href="../../data_classes/array/array/Array.html#ivy.array.array.Array" title="ivy.array.array.Array"><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>]) – the second of the two arrays to type promote</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
@@ -1546,31 +1405,22 @@ data type</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.functional.ivy.data_type.unset_default_dtype">
 <span class="sig-prename descclassname">ivy.</span></span><span class="sig-name descname"><span class="pre">unset_default_dtype</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/data_type.html#unset_default_dtype"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.data_type.unset_default_dtype" title="Permalink to this definition"></a></dt>
-<dd><p>Unsets the datatype dtype from default data type.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>None</strong> – </p>
-</dd>
-</dl>
+<dd><p>Reset the current default dtype to the previous state.</p>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">set_default_dtype</span><span class="p">(</span><span class="s1">&#39;float64&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">default_dtype_stack</span>
-<span class="go">    [&#39;float64&#39;]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">unset_default_dtype</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">default_dtype_stack</span>
-<span class="go">    []</span>
-</pre></div>
-</div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">set_default_dtype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">set_default_dtype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">bool</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">default_dtype_stack</span>
-<span class="go">    [&#39;int32&#39;, &#39;bool&#39;]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">unset_default_dtype</span><span class="p">()</span>
+<span class="go">[&#39;int32&#39;, &#39;bool&#39;]</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">unset_default_dtype</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">default_dtype_stack</span>
-<span class="go">    [&#39;int32&#39;]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">unset_default_dtype</span><span class="p">()</span>
+<span class="go">[&#39;int32&#39;]</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">unset_default_dtype</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">default_dtype_stack</span>
-<span class="go">    []</span>
+<span class="go">[]</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1588,7 +1438,7 @@ data type</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.functional.ivy.data_type.unset_default_uint_dtype">
 <span class="sig-prename descclassname">ivy.</span></span><span class="sig-name descname"><span class="pre">unset_default_uint_dtype</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/data_type.html#unset_default_uint_dtype"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.data_type.unset_default_uint_dtype" title="Permalink to this definition"></a></dt>
-<dd><p>Reset the current default uint dtype to the previous state</p>
+<dd><p>Reset the current default uint dtype to the previous state.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">set_default_uint_dtype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">UintDtype</span><span class="p">(</span><span class="s2">&quot;uint8&quot;</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">default_uint_dtype</span><span class="p">()</span>
@@ -1609,7 +1459,7 @@ data type</p>
 current framework.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>dtype_in</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DType</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]) – The data type for which to check for backend support</p>
+<dd class="field-odd"><p><strong>dtype_in</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeDtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]) – The data type for which to check for backend support</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
@@ -1619,16 +1469,7 @@ current framework.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>with <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Dtype</span></code> inputs:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">valid_dtype</span><span class="p">(</span><span class="kc">None</span><span class="p">))</span>
-<span class="go">True</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">valid_dtype</span><span class="p">(</span><span class="s1">&#39;float16&#39;</span><span class="p">))</span>
-<span class="go">True</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">valid_dtype</span><span class="p">(</span><span class="s1">&#39;float32&#39;</span><span class="p">))</span>
 <span class="go">True</span>
 </pre></div>
 </div>
@@ -1640,64 +1481,15 @@ current framework.</p>
 <span class="go">True</span>
 </pre></div>
 </div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">valid_dtype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">int8</span><span class="p">))</span>
-<span class="go">True</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">valid_dtype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">int64</span><span class="p">))</span>
-<span class="go">True</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">valid_dtype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">uint8</span><span class="p">))</span>
-<span class="go">True</span>
-</pre></div>
-</div>
-<p>with <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.NativeDtype</span></code> inputs:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">valid_dtype</span><span class="p">(</span><span class="s1">&#39;native_bool&#39;</span><span class="p">))</span>
-<span class="go">False</span>
-</pre></div>
-</div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">valid_dtype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">native_float16</span><span class="p">))</span>
 <span class="go">True</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">valid_dtype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">native_float32</span><span class="p">))</span>
-<span class="go">True</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">valid_dtype</span><span class="p">(</span><span class="s1">&#39;native_float64&#39;</span><span class="p">))</span>
-<span class="go">False</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">valid_dtype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">native_int8</span><span class="p">))</span>
-<span class="go">True</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">valid_dtype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">native_int16</span><span class="p">))</span>
-<span class="go">True</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">valid_dtype</span><span class="p">(</span><span class="s1">&#39;native_int32&#39;</span><span class="p">))</span>
-<span class="go">False</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">valid_dtype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">native_int64</span><span class="p">))</span>
-<span class="go">True</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">valid_dtype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">native_uint8</span><span class="p">))</span>
-<span class="go">True</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">valid_dtype</span><span class="p">(</span><span class="s1">&#39;native_uint64&#39;</span><span class="p">))</span>
-<span class="go">False</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <div class="toctree-wrapper compound">
 </div>
-<p>This should have hopefully given you an overview of the data type submodule,If you have any questions, please feel free to reach out on our <a class="reference external" href="https://discord.gg/ZVQdvbzNQJ">discord</a> in the <a class="reference external" href="https://discord.com/channels/799879767196958751/1000043749088436315">data type channel</a> or in the <a class="reference external" href="https://discord.com/channels/799879767196958751/2187">data type forum</a>!</p>
+<p>This should have hopefully given you an overview of the data type submodule,If you have any questions, please feel free to reach out on our <a class="reference external" href="https://discord.gg/ZVQdvbzNQJ">discord</a> in the <a class="reference external" href="https://discord.com/channels/799879767196958751/1000043749088436315">data type channel</a> or in the <a class="reference external" href="https://discord.com/channels/799879767196958751/1028298847950225519">data type forum</a>!</p>
 </section>
 
 
